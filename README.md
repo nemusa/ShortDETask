@@ -10,8 +10,8 @@ of Data Engineer work, as well as get to know your skills a little better.
 The task is simple, and shouldn't take more than 10 minutes of your work.
 
 1. Fill in the function that's supposed to read numbers.csv file content from filedir,
-2. Write your function that's going to execute calculate_numbers function faster than the basic
-implementation in basic_logic_implementation,
+2. Write your function that's going to execute calculate_numbers function at least 20% faster than the basic
+implementation in basic_logic_implementation.
 3. That's it, if only your code works (and the one and only test passes), please add your solution
 to the CV which you'll send with the application. (Best way will be link to your github with it)
 
