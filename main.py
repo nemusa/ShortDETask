@@ -7,16 +7,23 @@ Short task description:
 
 
 """
-from utils import timing
+import csv
 import os
 from math import sqrt, pow
+from multiprocessing import Pool
+
+from utils import timing
 
 
 @timing
 def load_file(base_dir: str) -> list:
-    # Modify this
+    def to_float(numbers):
+        return [float(n) for n in numbers]
 
-    return []
+    with open(os.path.join('filedir', 'numbers.csv')) as csvfile:
+        reader = csv.reader(csvfile, delimiter=' ')
+        _ = next(reader)
+        return [to_float(row) for row in reader]
 
 
 def calculate_numbers(numbers_pair: list) -> float:
@@ -39,9 +46,8 @@ def algorithm_basic_logic_implementation(numbers_list) -> list:
 # So that it will pass faster.
 @timing
 def your_algorithm_executing_function(numbers_list) -> list:
-    # And this
-
-    return []
+    with Pool(4) as pool:
+        return pool.map(calculate_numbers, numbers_list)
 
 
 def main() -> list:
